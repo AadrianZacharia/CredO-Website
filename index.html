@@ -3,59 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CredO - Cybersecurity Intelligence Platform</title>
+    <title>CredO - AI-Powered Cybersecurity Intelligence Platform | Real-Time Threat Detection</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="CredO delivers cutting-edge cybersecurity intelligence with AI-powered threat detection, real-time security insights, and proactive cyber defense for enterprise protection.">
+    <meta name="keywords" content="cybersecurity, threat detection, AI security, real-time monitoring, enterprise security, cyber defense, threat intelligence, behavioral analytics, network security">
+    <meta name="author" content="CredO Cybersecurity">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://credo-cybersecurity.netlify.app/">
+    <meta property="og:title" content="CredO - AI-Powered Cybersecurity Intelligence Platform">
+    <meta property="og:description" content="Protect your digital assets with cutting-edge threat intelligence platform that delivers real-time security insights and proactive cyber defense.">
+    <meta property="og:image" content="https://credo-cybersecurity.netlify.app/Assets/logo2.PNG">
+    <meta property="og:site_name" content="CredO Cybersecurity">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://credo-cybersecurity.netlify.app/">
+    <meta property="twitter:title" content="CredO - AI-Powered Cybersecurity Intelligence Platform">
+    <meta property="twitter:description" content="Protect your digital assets with cutting-edge threat intelligence platform that delivers real-time security insights and proactive cyber defense.">
+    <meta property="twitter:image" content="https://credo-cybersecurity.netlify.app/Assets/logo2.PNG">
+    
+    <!-- Additional SEO -->
+    <link rel="canonical" href="https://credo-cybersecurity.netlify.app/">
+    <meta name="theme-color" content="#780000">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="Assets/favicon.PNG">
     <link rel="shortcut icon" type="image/png" href="Assets/favicon.PNG">
+    <link rel="apple-touch-icon" href="Assets/favicon.PNG">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* EMERGENCY CSS - Force red colors */
-        .hero-title,
-        .section-title,
-        .page-title,
-        .service-title,
-        .layer-title,
-        .module-title,
-        .component-header h3,
-        .threat-title,
-        h1, h2, h3, h4 {
-            color: #780000 !important;
-        }
-        
-        /* Ultra-specific selectors for Vivaldi/Chrome compatibility */
-        * {
-            --force-red: #780000;
-        }
-        
-        h1[class*="hero"], h1[class*="title"], h2[class*="title"], h3[class*="title"] {
-            color: #780000 !important;
-        }
-        
-        /* Force red on specific elements by tag */
-        section h1, section h2, section h3, section h4,
-        div h1, div h2, div h3, div h4 {
-            color: #780000 !important;
-        }
-        
-        /* Diagnostic banners removed - keeping only color fixes */
-        
-        .navbar {
-            background: rgba(120, 0, 0, 0.95) !important;
-            border-bottom: 1px solid #780000 !important;
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #780000 0%, #a10000 100%) !important;
-            -webkit-background-clip: text !important;
-            -webkit-text-fill-color: transparent !important;
-            background-clip: text !important;
-        }
-    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -65,7 +51,7 @@
     </button>
 
     <!-- Navigation -->
-    <nav class="navbar glass-panel" style="background: rgba(120, 0, 0, 0.95) !important; border-bottom: 1px solid #780000;">
+    <nav class="navbar glass-panel">
         <div class="nav-container">
             <div class="nav-brand">
                 <img src="Assets/logo2.PNG" alt="CredO Logo" class="nav-logo">
@@ -102,7 +88,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-text glass-panel">
-                <h1 class="hero-title" style="color: #780000 !important;">
+                <h1 class="hero-title">
                     Real-Time Security 
                     <span class="gradient-text">Intelligence</span>
                 </h1>
@@ -152,7 +138,7 @@
         <div class="container">
             <div class="intelligence-content">
                 <div class="intelligence-text">
-                    <h2 class="section-title" style="color: #780000 !important;">
+                    <h2 class="section-title">
                         <span class="highlight-text">Real-Time Security Intelligence</span>
                     </h2>
                     <p class="intelligence-description">
@@ -254,7 +240,7 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2 class="section-title" style="color: #780000 !important;">Why Choose CredO?</h2>
+                    <h2 class="section-title">Why Choose CredO?</h2>
                     <p class="about-description">
                         With over a decade of experience in financial services, we combine traditional wisdom with innovative technology to deliver exceptional results for our clients.
                     </p>
@@ -338,15 +324,19 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form glass-panel">
+                <form class="contact-form glass-panel" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
+                    <!-- Hidden honeypot field for spam protection -->
+                    <p style="display: none;">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary glass-btn">Send Message</button>
                 </form>

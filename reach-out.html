@@ -3,53 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reach Out - CredO Cybersecurity</title>
+    <title>Contact CredO | Get Cybersecurity Consultation & Demo | Reach Out</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Contact CredO cybersecurity experts for consultation, product demos, and enterprise security solutions. Get in touch with our team for advanced threat protection.">
+    <meta name="keywords" content="contact cybersecurity experts, security consultation, product demo, enterprise security, cybersecurity support, threat protection consultation">
+    <meta name="author" content="CredO Cybersecurity">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://credo-cybersecurity.netlify.app/reach-out.html">
+    <meta property="og:title" content="Contact CredO | Get Cybersecurity Consultation & Demo">
+    <meta property="og:description" content="Contact CredO cybersecurity experts for consultation, product demos, and enterprise security solutions. Get in touch with our team for advanced threat protection.">
+    <meta property="og:image" content="https://credo-cybersecurity.netlify.app/Assets/logo2.PNG">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://credo-cybersecurity.netlify.app/reach-out.html">
+    <meta property="twitter:title" content="Contact CredO | Get Cybersecurity Consultation & Demo">
+    <meta property="twitter:description" content="Contact CredO cybersecurity experts for consultation, product demos, and enterprise security solutions.">
+    
+    <!-- Additional SEO -->
+    <link rel="canonical" href="https://credo-cybersecurity.netlify.app/reach-out.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="Assets/favicon.PNG">
     <link rel="shortcut icon" type="image/png" href="Assets/favicon.PNG">
+    <link rel="apple-touch-icon" href="Assets/favicon.PNG">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* EMERGENCY CSS - Force red colors */
-        .hero-title,
-        .section-title,
-        .page-title,
-        .service-title,
-        .layer-title,
-        .module-title,
-        .component-header h3,
-        .threat-title,
-        h1, h2, h3, h4 {
-            color: #780000 !important;
-        }
-        
-        /* Ultra-specific selectors for browser compatibility */
-        h1[class*="hero"], h1[class*="title"], h2[class*="title"], h3[class*="title"] {
-            color: #780000 !important;
-        }
-        
-        /* Force red on specific elements by tag */
-        section h1, section h2, section h3, section h4,
-        div h1, div h2, div h3, div h4 {
-            color: #780000 !important;
-        }
-        
-        .navbar {
-            background: rgba(120, 0, 0, 0.95) !important;
-            border-bottom: 1px solid #780000 !important;
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #780000 0%, #a10000 100%) !important;
-            -webkit-background-clip: text !important;
-            -webkit-text-fill-color: transparent !important;
-            background-clip: text !important;
-        }
-    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -245,7 +231,11 @@
             <!-- Demo Form -->
             <div id="demo-form" class="form-section glass-panel">
                 <h3>Schedule a Demo</h3>
-                <form class="contact-form">
+                <form class="contact-form" name="demo-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
+                    <!-- Hidden honeypot field for spam protection -->
+                    <p style="display: none;">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </p>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="demo-first-name">First Name *</label>
@@ -315,7 +305,11 @@
             <!-- General Contact Form -->
             <div id="contact-form" class="form-section glass-panel">
                 <h3>General Inquiry</h3>
-                <form class="contact-form">
+                <form class="contact-form" name="general-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field2" action="/success.html">
+                    <!-- Hidden honeypot field for spam protection -->
+                    <p style="display: none;">
+                        <label>Don't fill this out if you're human: <input name="bot-field2" /></label>
+                    </p>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="contact-name">Full Name *</label>
