@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under the Hood - CredO Cybersecurity</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Assets/favicon.PNG">
+    <link rel="shortcut icon" type="image/png" href="Assets/favicon.PNG">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* EMERGENCY CSS - Force red colors */
+        .hero-title,
+        .section-title,
+        .page-title,
+        .service-title,
+        .layer-title,
+        .module-title,
+        .component-header h3,
+        .threat-title,
+        h1, h2, h3, h4 {
+            color: #780000 !important;
+        }
+        
+        /* Ultra-specific selectors for browser compatibility */
+        h1[class*="hero"], h1[class*="title"], h2[class*="title"], h3[class*="title"] {
+            color: #780000 !important;
+        }
+        
+        /* Force red on specific elements by tag */
+        section h1, section h2, section h3, section h4,
+        div h1, div h2, div h3, div h4 {
+            color: #780000 !important;
+        }
+        
+        .navbar {
+            background: rgba(120, 0, 0, 0.95) !important;
+            border-bottom: 1px solid #780000 !important;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #780000 0%, #a10000 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-sun" id="themeIcon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-panel">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="Assets/logo2.PNG" alt="CredO Logo" class="nav-logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Solutions <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu glass-panel">
+                        <li><a href="under-the-hood.html" class="dropdown-link active">Under the hood...!</a></li>
+                        <li><a href="enterprise-product.html" class="dropdown-link">Enterprise Product</a></li>
+                        <li><a href="connected-everything.html" class="dropdown-link">Connected Everything</a></li>
+                        <li><a href="partners.html" class="dropdown-link">Partners</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Know us <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu glass-panel">
+                        <li><a href="whos-behind-this.html" class="dropdown-link">Who's behind this</a></li>
+                        <li><a href="who-we-are.html" class="dropdown-link">Who We Are</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="reach-out.html" class="nav-link">Reach out</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="page-title">
+                    Under the <span class="gradient-text">Hood</span>
+                </h1>
+                <p class="page-subtitle">
+                    Deep dive into the technical architecture and advanced algorithms that power CredO's cybersecurity intelligence platform.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Architecture Section -->
+    <section class="tech-architecture">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Architecture</h2>
+                <p class="section-subtitle">Built on cutting-edge technology stack for maximum performance and scalability</p>
+            </div>
+            
+            <div class="architecture-grid">
+                <div class="tech-layer glass-panel">
+                    <div class="layer-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="layer-title">Cloud Infrastructure</h3>
+                    <p class="layer-description">Multi-cloud architecture with AWS, Azure, and GCP integration for global scalability and redundancy.</p>
+                    <ul class="tech-list">
+                        <li><i class="fas fa-check"></i> Auto-scaling clusters</li>
+                        <li><i class="fas fa-check"></i> 99.99% uptime SLA</li>
+                        <li><i class="fas fa-check"></i> Global edge locations</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-layer glass-panel">
+                    <div class="layer-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="layer-title">AI/ML Engine</h3>
+                    <p class="layer-description">Advanced machine learning algorithms for behavioral analysis and threat prediction.</p>
+                    <ul class="tech-list">
+                        <li><i class="fas fa-check"></i> Deep learning models</li>
+                        <li><i class="fas fa-check"></i> Real-time inference</li>
+                        <li><i class="fas fa-check"></i> Continuous learning</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-layer glass-panel">
+                    <div class="layer-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="layer-title">Data Processing</h3>
+                    <p class="layer-description">High-performance data pipeline processing terabytes of security data in real-time.</p>
+                    <ul class="tech-list">
+                        <li><i class="fas fa-check"></i> Stream processing</li>
+                        <li><i class="fas fa-check"></i> Data lake architecture</li>
+                        <li><i class="fas fa-check"></i> GDPR compliant</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Components -->
+    <section class="core-components">
+        <div class="container">
+            <h2 class="section-title">Core Components</h2>
+            
+            <div class="components-grid">
+                <div class="component-card glass-panel">
+                    <div class="component-header">
+                        <i class="fas fa-shield-virus"></i>
+                        <h3>Threat Detection Engine</h3>
+                    </div>
+                    <div class="component-body">
+                        <p>Advanced behavioral analysis engine that monitors network traffic patterns and identifies anomalies in real-time.</p>
+                        <div class="tech-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Processing Speed:</span>
+                                <span class="spec-value">10TB/hour</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Detection Rate:</span>
+                                <span class="spec-value">99.7%</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">False Positives:</span>
+                                <span class="spec-value">&lt;0.1%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-card glass-panel">
+                    <div class="component-header">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>Network Analysis Module</h3>
+                    </div>
+                    <div class="component-body">
+                        <p>Deep packet inspection and network flow analysis to identify suspicious communication patterns.</p>
+                        <div class="tech-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Packet Analysis:</span>
+                                <span class="spec-value">Real-time</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Protocol Support:</span>
+                                <span class="spec-value">200+</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Network Visibility:</span>
+                                <span class="spec-value">360°</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="component-card glass-panel">
+                    <div class="component-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Analytics Dashboard</h3>
+                    </div>
+                    <div class="component-body">
+                        <p>Interactive visualization platform providing real-time insights and customizable security metrics.</p>
+                        <div class="tech-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Data Refresh:</span>
+                                <span class="spec-value">1 second</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Custom Widgets:</span>
+                                <span class="spec-value">50+</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Export Formats:</span>
+                                <span class="spec-value">10+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Algorithm Details -->
+    <section class="algorithm-details">
+        <div class="container">
+            <div class="algorithm-content">
+                <div class="algorithm-text">
+                    <h2 class="section-title">Advanced Algorithms</h2>
+                    <p class="algorithm-description">
+                        Our proprietary algorithms combine multiple machine learning techniques to deliver unparalleled threat detection accuracy.
+                    </p>
+                    
+                    <div class="algorithm-list">
+                        <div class="algorithm-item">
+                            <div class="algorithm-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="algorithm-info">
+                                <h4>Behavioral Graph Analysis</h4>
+                                <p>Creates dynamic graphs of user and entity behavior to identify anomalous patterns.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="algorithm-item">
+                            <div class="algorithm-icon">
+                                <i class="fas fa-vector-square"></i>
+                            </div>
+                            <div class="algorithm-info">
+                                <h4>Ensemble Learning</h4>
+                                <p>Combines multiple ML models for improved accuracy and reduced false positives.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="algorithm-item">
+                            <div class="algorithm-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="algorithm-info">
+                                <h4>Time Series Analysis</h4>
+                                <p>Analyzes temporal patterns to predict and prevent future security incidents.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="algorithm-visual">
+                    <div class="code-snippet glass-panel">
+                        <div class="code-header">
+                            <span class="code-title">Threat Detection Algorithm</span>
+                            <div class="code-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                        </div>
+                        <div class="code-content">
+                            <pre><code><span class="keyword">function</span> <span class="function">detectThreat</span>(<span class="parameter">networkData</span>) {
+  <span class="keyword">const</span> <span class="variable">anomalyScore</span> = <span class="function">calculateAnomaly</span>(<span class="parameter">networkData</span>);
+  <span class="keyword">const</span> <span class="variable">behaviorPattern</span> = <span class="function">analyzeBehavior</span>(<span class="parameter">networkData</span>);
+  
+  <span class="keyword">if</span> (<span class="variable">anomalyScore</span> > <span class="number">0.85</span> && 
+      <span class="variable">behaviorPattern</span>.<span class="property">risk</span> > <span class="number">0.7</span>) {
+    <span class="keyword">return</span> <span class="function">triggerAlert</span>(<span class="string">'HIGH_RISK'</span>);
+  }
+  
+  <span class="keyword">return</span> <span class="function">monitorContinuously</span>(<span class="parameter">networkData</span>);
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Metrics -->
+    <section class="performance-metrics">
+        <div class="container">
+            <h2 class="section-title">Performance Metrics</h2>
+            <div class="metrics-grid">
+                <div class="metric-card glass-panel">
+                    <div class="metric-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="metric-value">2.3ms</div>
+                    <div class="metric-label">Average Response Time</div>
+                </div>
+                
+                <div class="metric-card glass-panel">
+                    <div class="metric-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="metric-value">99.7%</div>
+                    <div class="metric-label">Threat Detection Rate</div>
+                </div>
+                
+                <div class="metric-card glass-panel">
+                    <div class="metric-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="metric-value">0.08%</div>
+                    <div class="metric-label">False Positive Rate</div>
+                </div>
+                
+                <div class="metric-card glass-panel">
+                    <div class="metric-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="metric-value">99.99%</div>
+                    <div class="metric-label">System Uptime</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer glass-panel">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>CredO</h3>
+                    <p>Advanced cybersecurity intelligence for modern threats.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="under-the-hood.html">Under the hood...!</a></li>
+                            <li><a href="enterprise-product.html">Enterprise Product</a></li>
+                            <li><a href="connected-everything.html">Connected Everything</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="who-we-are.html">Who We Are</a></li>
+                            <li><a href="whos-behind-this.html">Who's behind this</a></li>
+                            <li><a href="reach-out.html">Reach out</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CredO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

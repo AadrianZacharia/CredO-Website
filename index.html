@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CredO - Cybersecurity Intelligence Platform</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Assets/favicon.PNG">
+    <link rel="shortcut icon" type="image/png" href="Assets/favicon.PNG">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* EMERGENCY CSS - Force red colors */
+        .hero-title,
+        .section-title,
+        .page-title,
+        .service-title,
+        .layer-title,
+        .module-title,
+        .component-header h3,
+        .threat-title,
+        h1, h2, h3, h4 {
+            color: #780000 !important;
+        }
+        
+        /* Ultra-specific selectors for Vivaldi/Chrome compatibility */
+        * {
+            --force-red: #780000;
+        }
+        
+        h1[class*="hero"], h1[class*="title"], h2[class*="title"], h3[class*="title"] {
+            color: #780000 !important;
+        }
+        
+        /* Force red on specific elements by tag */
+        section h1, section h2, section h3, section h4,
+        div h1, div h2, div h3, div h4 {
+            color: #780000 !important;
+        }
+        
+        /* Diagnostic banners removed - keeping only color fixes */
+        
+        .navbar {
+            background: rgba(120, 0, 0, 0.95) !important;
+            border-bottom: 1px solid #780000 !important;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #780000 0%, #a10000 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-sun" id="themeIcon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-panel" style="background: rgba(120, 0, 0, 0.95) !important; border-bottom: 1px solid #780000;">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="Assets/logo2.PNG" alt="CredO Logo" class="nav-logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Solutions <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu glass-panel">
+                        <li><a href="under-the-hood.html" class="dropdown-link">Under the hood...!</a></li>
+                        <li><a href="enterprise-product.html" class="dropdown-link">Enterprise Product</a></li>
+                        <li><a href="connected-everything.html" class="dropdown-link">Connected Everything</a></li>
+                        <li><a href="partners.html" class="dropdown-link">Partners</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Know us <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu glass-panel">
+                        <li><a href="whos-behind-this.html" class="dropdown-link">Who's behind this</a></li>
+                        <li><a href="who-we-are.html" class="dropdown-link">Who We Are</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="reach-out.html" class="nav-link">Reach out</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text glass-panel">
+                <h1 class="hero-title" style="color: #780000 !important;">
+                    Real-Time Security 
+                    <span class="gradient-text">Intelligence</span>
+                </h1>
+                <p class="hero-description">
+                    Protect your digital assets with our cutting-edge threat intelligence platform that delivers real-time security insights and proactive cyber defense.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary glass-btn">Get Started</button>
+                    <button class="btn btn-secondary glass-btn">Learn More</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card glass-panel">
+                    <div class="card-header">
+                        <div class="card-dots">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="balance-section">
+                            <p class="balance-label">Threats Detected</p>
+                            <h3 class="balance-amount">2,847</h3>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value">99.9%</span>
+                                <span class="stat-label">Uptime</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">24/7</span>
+                                <span class="stat-label">Monitoring</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Real-Time Security Intelligence Section -->
+    <section id="intelligence" class="intelligence-section">
+        <div class="container">
+            <div class="intelligence-content">
+                <div class="intelligence-text">
+                    <h2 class="section-title" style="color: #780000 !important;">
+                        <span class="highlight-text">Real-Time Security Intelligence</span>
+                    </h2>
+                    <p class="intelligence-description">
+                        Leveraging real-time threat feeds and behavioural analysis, Cred-O empowers your system to detect and respond to cyber risks as they unfold. This enables proactive defense and minimises response time across your security operations.
+                    </p>
+                </div>
+                <div class="intelligence-visual">
+                    <div class="threat-map glass-panel">
+                        <div class="map-header">
+                            <h3>Global Threat Detection</h3>
+                            <div class="status-indicators">
+                                <span class="status-dot active"></span>
+                                <span class="status-text">Live Monitoring</span>
+                            </div>
+                        </div>
+                        <div class="map-content">
+                            <div class="threat-indicators">
+                                <div class="threat-point" style="top: 20%; left: 15%;"></div>
+                                <div class="threat-point" style="top: 35%; left: 45%;"></div>
+                                <div class="threat-point" style="top: 60%; left: 25%;"></div>
+                                <div class="threat-point" style="top: 45%; left: 65%;"></div>
+                                <div class="threat-point" style="top: 25%; left: 80%;"></div>
+                            </div>
+                            <div class="network-lines">
+                                <svg width="100%" height="200">
+                                    <defs>
+                                        <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0" />
+                                            <stop offset="50%" style="stop-color:#00d4ff;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#0099cc;stop-opacity:0" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path d="M50,50 Q150,100 250,50" stroke="url(#lineGradient)" stroke-width="2" fill="none" opacity="0.6"/>
+                                    <path d="M100,150 Q200,50 300,150" stroke="url(#lineGradient)" stroke-width="2" fill="none" opacity="0.4"/>
+                                    <path d="M30,120 Q120,80 200,120" stroke="url(#lineGradient)" stroke-width="2" fill="none" opacity="0.5"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Threat Intelligence Details Section -->
+    <section class="threat-details">
+        <div class="container">
+            <div class="threat-content">
+                <div class="threat-info">
+                    <h3 class="threat-title">
+                        <span class="highlight-text">Threat Intelligence and Custom Standard & Control</span>
+                    </h3>
+                    <p class="threat-description">
+                        Built on advanced AI and behavioural analytics, Cred-O's Threat Intelligence system delivers real-time insights into potential threats across your network. It enables faster detection, contextual threat scoring, and automated response, ensuring resilient and scalable cyber defense.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: #780000 !important;">Our Cybersecurity Services</h2>
+                <p class="section-subtitle">Comprehensive security solutions to protect your digital infrastructure</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card glass-panel">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h3 class="service-title">Threat Detection & Response</h3>
+                    <p class="service-description">Advanced AI-powered threat detection with real-time response capabilities and automated incident management.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card glass-panel">
+                    <div class="service-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="service-title">Security Monitoring</h3>
+                    <p class="service-description">24/7 continuous monitoring of your network infrastructure with behavioural analytics and anomaly detection.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card glass-panel">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="service-title">Threat Intelligence</h3>
+                    <p class="service-description">Real-time threat intelligence feeds with contextual analysis and custom security controls.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title" style="color: #780000 !important;">Why Choose CredO?</h2>
+                    <p class="about-description">
+                        With over a decade of experience in financial services, we combine traditional wisdom with innovative technology to deliver exceptional results for our clients.
+                    </p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Expert Financial Advisors</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 Customer Support</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Advanced Security Measures</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Personalized Investment Strategies</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="stats-container glass-panel">
+                        <div class="stat-box">
+                            <h3 class="stat-number">10+</h3>
+                            <p class="stat-text">Years Experience</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3 class="stat-number">5K+</h3>
+                            <p class="stat-text">Happy Clients</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3 class="stat-number">$2B+</h3>
+                            <p class="stat-text">Assets Managed</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3 class="stat-number">99%</h3>
+                            <p class="stat-text">Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to start your financial journey with us?</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item glass-panel">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item glass-panel">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>contact@cred-o.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item glass-panel">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>123 Financial District, NY</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form glass-panel">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary glass-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer glass-panel">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>CredO</h3>
+                    <p>Modern financial solutions for a brighter future.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#">Investment Management</a></li>
+                            <li><a href="#">Financial Planning</a></li>
+                            <li><a href="#">Wealth Advisory</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CredO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

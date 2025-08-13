@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Test</title>
+    <style>
+        body {
+            background: #0a0a0a;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+        }
+        .test-heading {
+            color: #780000 !important;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .navbar-test {
+            background: rgba(120, 0, 0, 0.95) !important;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar-test">
+        This should be red background navbar
+    </div>
+    
+    <h1 class="test-heading">This heading should be #780000 red</h1>
+    
+    <p>If the heading above is red and the navbar has a red background, then the color #780000 is working correctly.</p>
+    
+    <p>If they're not red, there might be a browser compatibility issue or the color isn't being applied.</p>
+</body>
+</html>

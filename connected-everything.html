@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connected Everything - CredO Cybersecurity</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Assets/favicon.PNG">
+    <link rel="shortcut icon" type="image/png" href="Assets/favicon.PNG">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* EMERGENCY CSS - Force red colors */
+        .hero-title,
+        .section-title,
+        .page-title,
+        .service-title,
+        .layer-title,
+        .module-title,
+        .component-header h3,
+        .threat-title,
+        h1, h2, h3, h4 {
+            color: #780000 !important;
+        }
+        
+        /* Ultra-specific selectors for browser compatibility */
+        h1[class*="hero"], h1[class*="title"], h2[class*="title"], h3[class*="title"] {
+            color: #780000 !important;
+        }
+        
+        /* Force red on specific elements by tag */
+        section h1, section h2, section h3, section h4,
+        div h1, div h2, div h3, div h4 {
+            color: #780000 !important;
+        }
+        
+        .navbar {
+            background: rgba(120, 0, 0, 0.95) !important;
+            border-bottom: 1px solid #780000 !important;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #780000 0%, #a10000 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-sun" id="themeIcon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-panel">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="Assets/logo2.PNG" alt="CredO Logo" class="nav-logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Solutions <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu glass-panel">
+                        <li><a href="under-the-hood.html" class="dropdown-link">Under the hood...!</a></li>
+                        <li><a href="enterprise-product.html" class="dropdown-link">Enterprise Product</a></li>
+                        <li><a href="connected-everything.html" class="dropdown-link active">Connected Everything</a></li>
+                        <li><a href="partners.html" class="dropdown-link">Partners</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Know us <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu glass-panel">
+                        <li><a href="whos-behind-this.html" class="dropdown-link">Who's behind this</a></li>
+                        <li><a href="who-we-are.html" class="dropdown-link">Who We Are</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="reach-out.html" class="nav-link">Reach out</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="page-title">
+                    Connected <span class="gradient-text">Everything</span>
+                </h1>
+                <p class="page-subtitle">
+                    Securing the Internet of Things ecosystem with comprehensive IoT cybersecurity solutions for smart devices, industrial systems, and connected infrastructure.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- IoT Ecosystem Overview -->
+    <section class="iot-ecosystem">
+        <div class="container">
+            <div class="ecosystem-content">
+                <div class="ecosystem-text">
+                    <h2 class="section-title">IoT Security Ecosystem</h2>
+                    <p class="ecosystem-description">
+                        As billions of devices connect to the internet, traditional security approaches fall short. CredO's Connected Everything platform provides comprehensive protection for the entire IoT ecosystem, from smart home devices to industrial control systems.
+                    </p>
+                    
+                    <div class="ecosystem-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">75B+</div>
+                            <div class="stat-label">Connected Devices by 2025</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1.5M</div>
+                            <div class="stat-label">IoT Attacks Per Month</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Unencrypted IoT Traffic</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ecosystem-visual">
+                    <div class="iot-network glass-panel">
+                        <div class="network-center">
+                            <div class="central-hub">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>CredO Shield</span>
+                            </div>
+                        </div>
+                        <div class="device-nodes">
+                            <div class="device-node home" style="top: 10%; left: 20%;">
+                                <i class="fas fa-home"></i>
+                                <span>Smart Home</span>
+                            </div>
+                            <div class="device-node industrial" style="top: 20%; right: 15%;">
+                                <i class="fas fa-industry"></i>
+                                <span>Industrial IoT</span>
+                            </div>
+                            <div class="device-node healthcare" style="bottom: 25%; left: 15%;">
+                                <i class="fas fa-heartbeat"></i>
+                                <span>Healthcare</span>
+                            </div>
+                            <div class="device-node automotive" style="bottom: 20%; right: 20%;">
+                                <i class="fas fa-car"></i>
+                                <span>Automotive</span>
+                            </div>
+                            <div class="device-node smart-city" style="top: 50%; left: 5%;">
+                                <i class="fas fa-city"></i>
+                                <span>Smart City</span>
+                            </div>
+                            <div class="device-node retail" style="top: 45%; right: 8%;">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>Retail</span>
+                            </div>
+                        </div>
+                        <div class="connection-lines">
+                            <svg width="100%" height="100%">
+                                <defs>
+                                    <radialGradient id="connectionGradient" cx="50%" cy="50%" r="50%">
+                                        <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0" />
+                                    </radialGradient>
+                                </defs>
+                                <circle cx="50%" cy="50%" r="80" stroke="url(#connectionGradient)" stroke-width="2" fill="none" opacity="0.6"/>
+                                <circle cx="50%" cy="50%" r="120" stroke="url(#connectionGradient)" stroke-width="1" fill="none" opacity="0.4"/>
+                                <circle cx="50%" cy="50%" r="160" stroke="url(#connectionGradient)" stroke-width="1" fill="none" opacity="0.2"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IoT Security Challenges -->
+    <section class="iot-challenges">
+        <div class="container">
+            <h2 class="section-title">IoT Security Challenges</h2>
+            
+            <div class="challenges-grid">
+                <div class="challenge-card glass-panel">
+                    <div class="challenge-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Device Vulnerabilities</h3>
+                    <p>Many IoT devices lack basic security features like encryption, authentication, and secure boot processes.</p>
+                    <div class="challenge-impact">
+                        <span class="impact-label">Impact:</span>
+                        <span class="impact-value">High Risk</span>
+                    </div>
+                </div>
+                
+                <div class="challenge-card glass-panel">
+                    <div class="challenge-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Network Complexity</h3>
+                    <p>Heterogeneous networks with mixed protocols make monitoring and securing IoT traffic extremely challenging.</p>
+                    <div class="challenge-impact">
+                        <span class="impact-label">Impact:</span>
+                        <span class="impact-value">Medium Risk</span>
+                    </div>
+                </div>
+                
+                <div class="challenge-card glass-panel">
+                    <div class="challenge-icon">
+                        <i class="fas fa-eye-slash"></i>
+                    </div>
+                    <h3>Lack of Visibility</h3>
+                    <p>Organizations often don't know what IoT devices are on their networks or how they're communicating.</p>
+                    <div class="challenge-impact">
+                        <span class="impact-label">Impact:</span>
+                        <span class="impact-value">Critical Risk</span>
+                    </div>
+                </div>
+                
+                <div class="challenge-card glass-panel">
+                    <div class="challenge-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Update Management</h3>
+                    <p>Many IoT devices are difficult or impossible to update, leaving them vulnerable to known exploits.</p>
+                    <div class="challenge-impact">
+                        <span class="impact-label">Impact:</span>
+                        <span class="impact-value">High Risk</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CredO IoT Solutions -->
+    <section class="iot-solutions">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">CredO IoT Security Solutions</h2>
+                <p class="section-subtitle">Comprehensive protection for every connected device in your ecosystem</p>
+            </div>
+            
+            <div class="solutions-grid">
+                <div class="solution-card glass-panel">
+                    <div class="solution-header">
+                        <div class="solution-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Device Discovery & Inventory</h3>
+                    </div>
+                    <div class="solution-body">
+                        <p>Automatically discover and catalog all IoT devices on your network with detailed asset information.</p>
+                        <div class="solution-features">
+                            <div class="feature-badge">Passive Discovery</div>
+                            <div class="feature-badge">Asset Fingerprinting</div>
+                            <div class="feature-badge">Real-time Updates</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="solution-card glass-panel">
+                    <div class="solution-header">
+                        <div class="solution-icon">
+                            <i class="fas fa-shield-virus"></i>
+                        </div>
+                        <h3>Behavioral Analytics</h3>
+                    </div>
+                    <div class="solution-body">
+                        <p>AI-powered behavioral analysis to detect anomalous device behavior and potential security threats.</p>
+                        <div class="solution-features">
+                            <div class="feature-badge">ML-Based Detection</div>
+                            <div class="feature-badge">Anomaly Scoring</div>
+                            <div class="feature-badge">Threat Correlation</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="solution-card glass-panel">
+                    <div class="solution-header">
+                        <div class="solution-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3>Network Segmentation</h3>
+                    </div>
+                    <div class="solution-body">
+                        <p>Automated micro-segmentation to isolate IoT devices and limit lateral movement of threats.</p>
+                        <div class="solution-features">
+                            <div class="feature-badge">Zero Trust</div>
+                            <div class="feature-badge">Micro-segments</div>
+                            <div class="feature-badge">Policy Automation</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="solution-card glass-panel">
+                    <div class="solution-header">
+                        <div class="solution-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Incident Response</h3>
+                    </div>
+                    <div class="solution-body">
+                        <p>Rapid containment and remediation of IoT security incidents with automated response capabilities.</p>
+                        <div class="solution-features">
+                            <div class="feature-badge">Auto-Quarantine</div>
+                            <div class="feature-badge">Forensic Analysis</div>
+                            <div class="feature-badge">Remediation Plans</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Verticals -->
+    <section class="industry-verticals">
+        <div class="container">
+            <h2 class="section-title">Industry-Specific Solutions</h2>
+            
+            <div class="verticals-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="healthcare">Healthcare</button>
+                    <button class="tab-btn" data-tab="manufacturing">Manufacturing</button>
+                    <button class="tab-btn" data-tab="smart-cities">Smart Cities</button>
+                    <button class="tab-btn" data-tab="retail">Retail</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="tab-panel active glass-panel" id="healthcare">
+                        <div class="panel-content">
+                            <div class="panel-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="panel-text">
+                                <h3>Healthcare IoT Security</h3>
+                                <p>Protect medical devices, patient data, and hospital networks with specialized healthcare IoT security solutions.</p>
+                                <div class="panel-features">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>HIPAA Compliance</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Medical Device Protection</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Patient Privacy</span>
+                                    </div>
+                                </div>
+                                <div class="panel-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">83%</span>
+                                        <span class="stat-label">Reduction in breaches</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">24/7</span>
+                                        <span class="stat-label">Device monitoring</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-panel glass-panel" id="manufacturing">
+                        <div class="panel-content">
+                            <div class="panel-icon">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <div class="panel-text">
+                                <h3>Industrial IoT Security</h3>
+                                <p>Secure industrial control systems, manufacturing equipment, and operational technology networks.</p>
+                                <div class="panel-features">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>OT/IT Convergence</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>SCADA Protection</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Zero Downtime</span>
+                                    </div>
+                                </div>
+                                <div class="panel-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">99.9%</span>
+                                        <span class="stat-label">Uptime guarantee</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">50%</span>
+                                        <span class="stat-label">Faster threat detection</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-panel glass-panel" id="smart-cities">
+                        <div class="panel-content">
+                            <div class="panel-icon">
+                                <i class="fas fa-city"></i>
+                            </div>
+                            <div class="panel-text">
+                                <h3>Smart City Infrastructure</h3>
+                                <p>Protect smart city infrastructure including traffic systems, public safety networks, and utility grids.</p>
+                                <div class="panel-features">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Critical Infrastructure</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Public Safety</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Citizen Privacy</span>
+                                    </div>
+                                </div>
+                                <div class="panel-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">1M+</span>
+                                        <span class="stat-label">Devices protected</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">15</span>
+                                        <span class="stat-label">Smart cities secured</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-panel glass-panel" id="retail">
+                        <div class="panel-content">
+                            <div class="panel-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="panel-text">
+                                <h3>Retail & E-commerce</h3>
+                                <p>Secure POS systems, inventory management, and customer experience technologies in retail environments.</p>
+                                <div class="panel-features">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>PCI DSS Compliance</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Customer Data Protection</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check"></i>
+                                        <span>Inventory Security</span>
+                                    </div>
+                                </div>
+                                <div class="panel-stats">
+                                    <div class="stat">
+                                        <span class="stat-number">95%</span>
+                                        <span class="stat-label">Fraud reduction</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-number">2.5x</span>
+                                        <span class="stat-label">Faster compliance</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Roadmap -->
+    <section class="implementation-roadmap">
+        <div class="container">
+            <h2 class="section-title">Implementation Roadmap</h2>
+            
+            <div class="roadmap-timeline">
+                <div class="timeline-item glass-panel">
+                    <div class="timeline-marker">
+                        <span class="phase-number">1</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Discovery & Assessment</h3>
+                        <p>Comprehensive network scan and IoT device inventory to understand your current security posture.</p>
+                        <div class="timeline-duration">2-4 weeks</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item glass-panel">
+                    <div class="timeline-marker">
+                        <span class="phase-number">2</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Policy Definition</h3>
+                        <p>Create security policies and network segmentation rules based on device types and risk profiles.</p>
+                        <div class="timeline-duration">1-2 weeks</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item glass-panel">
+                    <div class="timeline-marker">
+                        <span class="phase-number">3</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Deployment & Configuration</h3>
+                        <p>Deploy CredO agents and configure monitoring systems for comprehensive IoT security coverage.</p>
+                        <div class="timeline-duration">2-3 weeks</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item glass-panel">
+                    <div class="timeline-marker">
+                        <span class="phase-number">4</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Monitoring & Optimization</h3>
+                        <p>Continuous monitoring, threat detection, and system optimization for ongoing protection.</p>
+                        <div class="timeline-duration">Ongoing</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer glass-panel">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>CredO</h3>
+                    <p>Advanced cybersecurity intelligence for modern threats.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="under-the-hood.html">Under the hood...!</a></li>
+                            <li><a href="enterprise-product.html">Enterprise Product</a></li>
+                            <li><a href="connected-everything.html">Connected Everything</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="who-we-are.html">Who We Are</a></li>
+                            <li><a href="whos-behind-this.html">Who's behind this</a></li>
+                            <li><a href="reach-out.html">Reach out</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CredO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

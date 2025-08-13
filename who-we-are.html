@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who We Are - CredO Cybersecurity</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Assets/favicon.PNG">
+    <link rel="shortcut icon" type="image/png" href="Assets/favicon.PNG">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* EMERGENCY CSS - Force red colors */
+        .hero-title,
+        .section-title,
+        .page-title,
+        .service-title,
+        .layer-title,
+        .module-title,
+        .component-header h3,
+        .threat-title,
+        h1, h2, h3, h4 {
+            color: #780000 !important;
+        }
+        
+        /* Ultra-specific selectors for browser compatibility */
+        h1[class*="hero"], h1[class*="title"], h2[class*="title"], h3[class*="title"] {
+            color: #780000 !important;
+        }
+        
+        /* Force red on specific elements by tag */
+        section h1, section h2, section h3, section h4,
+        div h1, div h2, div h3, div h4 {
+            color: #780000 !important;
+        }
+        
+        .navbar {
+            background: rgba(120, 0, 0, 0.95) !important;
+            border-bottom: 1px solid #780000 !important;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #780000 0%, #a10000 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-sun" id="themeIcon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-panel">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="Assets/logo2.PNG" alt="CredO Logo" class="nav-logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Solutions <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu glass-panel">
+                        <li><a href="under-the-hood.html" class="dropdown-link">Under the hood...!</a></li>
+                        <li><a href="enterprise-product.html" class="dropdown-link">Enterprise Product</a></li>
+                        <li><a href="connected-everything.html" class="dropdown-link">Connected Everything</a></li>
+                        <li><a href="partners.html" class="dropdown-link">Partners</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Know us <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu glass-panel">
+                        <li><a href="whos-behind-this.html" class="dropdown-link">Who's behind this</a></li>
+                        <li><a href="who-we-are.html" class="dropdown-link active">Who We Are</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="reach-out.html" class="nav-link">Reach out</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="page-title">
+                    Who <span class="gradient-text">We Are</span>
+                </h1>
+                <p class="page-subtitle">
+                    CredO is a cybersecurity intelligence company dedicated to protecting organizations from advanced threats through innovative AI-powered solutions and real-time threat detection.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Story -->
+    <section class="company-story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2 class="section-title">Our Story</h2>
+                    <p class="story-description">
+                        Founded in 2019 by cybersecurity veterans who witnessed firsthand the limitations of traditional security approaches, CredO was born from a simple yet powerful vision: to create intelligent cybersecurity solutions that adapt and evolve with emerging threats.
+                    </p>
+                    <p class="story-description">
+                        After experiencing multiple sophisticated attacks that bypassed conventional security tools, our founders realized that the cybersecurity industry needed a fundamental shift toward behavioral analytics and real-time threat intelligence.
+                    </p>
+                    
+                    <div class="story-milestones">
+                        <div class="milestone-item">
+                            <div class="milestone-year">2019</div>
+                            <div class="milestone-content">
+                                <h4>Company Founded</h4>
+                                <p>CredO established in Silicon Valley with initial focus on AI-powered threat detection</p>
+                            </div>
+                        </div>
+                        
+                        <div class="milestone-item">
+                            <div class="milestone-year">2020</div>
+                            <div class="milestone-content">
+                                <h4>First Product Launch</h4>
+                                <p>Released beta version of behavioral analytics platform to select enterprise customers</p>
+                            </div>
+                        </div>
+                        
+                        <div class="milestone-item">
+                            <div class="milestone-year">2021</div>
+                            <div class="milestone-content">
+                                <h4>Series A Funding</h4>
+                                <p>Secured $15M Series A funding to accelerate product development and team growth</p>
+                            </div>
+                        </div>
+                        
+                        <div class="milestone-item">
+                            <div class="milestone-year">2022</div>
+                            <div class="milestone-content">
+                                <h4>Global Expansion</h4>
+                                <p>Expanded operations to Europe and Asia, serving 100+ enterprise customers</p>
+                            </div>
+                        </div>
+                        
+                        <div class="milestone-item">
+                            <div class="milestone-year">2023</div>
+                            <div class="milestone-content">
+                                <h4>Enterprise Platform</h4>
+                                <p>Launched comprehensive enterprise platform with IoT security capabilities</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="story-visual">
+                    <div class="company-timeline glass-panel">
+                        <h3>By the Numbers</h3>
+                        <div class="timeline-stats">
+                            <div class="timeline-stat">
+                                <div class="stat-value">500+</div>
+                                <div class="stat-label">Enterprise Customers</div>
+                            </div>
+                            <div class="timeline-stat">
+                                <div class="stat-value">10M+</div>
+                                <div class="stat-label">Devices Protected</div>
+                            </div>
+                            <div class="timeline-stat">
+                                <div class="stat-value">50+</div>
+                                <div class="stat-label">Countries Served</div>
+                            </div>
+                            <div class="timeline-stat">
+                                <div class="stat-value">85+</div>
+                                <div class="stat-label">Team Members</div>
+                            </div>
+                        </div>
+                        
+                        <div class="growth-chart">
+                            <h4>Customer Growth</h4>
+                            <div class="chart-bars">
+                                <div class="chart-bar" style="height: 20%;">
+                                    <span class="bar-year">2019</span>
+                                </div>
+                                <div class="chart-bar" style="height: 35%;">
+                                    <span class="bar-year">2020</span>
+                                </div>
+                                <div class="chart-bar" style="height: 55%;">
+                                    <span class="bar-year">2021</span>
+                                </div>
+                                <div class="chart-bar" style="height: 80%;">
+                                    <span class="bar-year">2022</span>
+                                </div>
+                                <div class="chart-bar" style="height: 100%;">
+                                    <span class="bar-year">2023</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="mission-vision-grid">
+                <div class="mission-card glass-panel">
+                    <div class="card-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To empower organizations worldwide with intelligent cybersecurity solutions that proactively defend against evolving threats, ensuring business continuity and protecting valuable digital assets.</p>
+                </div>
+                
+                <div class="vision-card glass-panel">
+                    <div class="card-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To create a world where cybersecurity is predictive, adaptive, and seamlessly integrated into every digital interaction, making cyber threats a concern of the past.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="core-values">
+        <div class="container">
+            <h2 class="section-title">Our Core Values</h2>
+            
+            <div class="values-grid">
+                <div class="value-card glass-panel">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Security First</h3>
+                    <p>We prioritize security in everything we do, from product development to customer interactions, ensuring the highest standards of protection.</p>
+                </div>
+                
+                <div class="value-card glass-panel">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We continuously push the boundaries of cybersecurity technology, embracing new ideas and approaches to stay ahead of emerging threats.</p>
+                </div>
+                
+                <div class="value-card glass-panel">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Trust & Transparency</h3>
+                    <p>We build lasting relationships through honest communication, reliable service, and transparent business practices with all stakeholders.</p>
+                </div>
+                
+                <div class="value-card glass-panel">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Customer Success</h3>
+                    <p>Our customers' success is our success. We're committed to delivering exceptional value and support to help them achieve their security goals.</p>
+                </div>
+                
+                <div class="value-card glass-panel">
+                    <div class="value-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>We strive for excellence in every aspect of our business, from product quality to customer service, setting new industry standards.</p>
+                </div>
+                
+                <div class="value-card glass-panel">
+                    <div class="value-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Impact</h3>
+                    <p>We work to make the digital world safer for everyone, regardless of size, industry, or location, through accessible cybersecurity solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Philosophy -->
+    <section class="technology-philosophy">
+        <div class="container">
+            <div class="philosophy-content">
+                <div class="philosophy-text">
+                    <h2 class="section-title">Our Technology Philosophy</h2>
+                    <p class="philosophy-description">
+                        We believe that effective cybersecurity requires a fundamental shift from reactive to proactive defense. Our technology philosophy is built on three core principles that guide every product decision and development effort.
+                    </p>
+                    
+                    <div class="philosophy-principles">
+                        <div class="principle-item">
+                            <div class="principle-number">01</div>
+                            <div class="principle-content">
+                                <h4>AI-First Approach</h4>
+                                <p>Every solution we build leverages artificial intelligence and machine learning to adapt to new threats and learn from behavioral patterns.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="principle-item">
+                            <div class="principle-number">02</div>
+                            <div class="principle-content">
+                                <h4>Real-Time Intelligence</h4>
+                                <p>Speed matters in cybersecurity. Our platform provides real-time threat detection and response capabilities to minimize impact.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="principle-item">
+                            <div class="principle-number">03</div>
+                            <div class="principle-content">
+                                <h4>Scalable Architecture</h4>
+                                <p>Our solutions are built to scale from small businesses to global enterprises without compromising performance or security.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="philosophy-visual">
+                    <div class="tech-stack glass-panel">
+                        <h3>Technology Stack</h3>
+                        <div class="stack-categories">
+                            <div class="stack-category">
+                                <h4>AI/ML Platform</h4>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">TensorFlow</span>
+                                    <span class="tech-tag">PyTorch</span>
+                                    <span class="tech-tag">Scikit-learn</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stack-category">
+                                <h4>Cloud Infrastructure</h4>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">AWS</span>
+                                    <span class="tech-tag">Azure</span>
+                                    <span class="tech-tag">GCP</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stack-category">
+                                <h4>Data Processing</h4>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Apache Kafka</span>
+                                    <span class="tech-tag">Elasticsearch</span>
+                                    <span class="tech-tag">Redis</span>
+                                </div>
+                            </div>
+                            
+                            <div class="stack-category">
+                                <h4>Security</h4>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Zero Trust</span>
+                                    <span class="tech-tag">End-to-End Encryption</span>
+                                    <span class="tech-tag">SIEM Integration</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Recognition -->
+    <section class="industry-recognition">
+        <div class="container">
+            <h2 class="section-title">Industry Recognition</h2>
+            
+            <div class="recognition-grid">
+                <div class="recognition-item glass-panel">
+                    <div class="recognition-logo">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Gartner Cool Vendor</h3>
+                    <p>Security and Risk Management</p>
+                    <div class="recognition-year">2023</div>
+                </div>
+                
+                <div class="recognition-item glass-panel">
+                    <div class="recognition-logo">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Cybersecurity Excellence Awards</h3>
+                    <p>Best AI-Powered Security Solution</p>
+                    <div class="recognition-year">2023</div>
+                </div>
+                
+                <div class="recognition-item glass-panel">
+                    <div class="recognition-logo">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Forbes 30 Under 30</h3>
+                    <p>Enterprise Technology Category</p>
+                    <div class="recognition-year">2022</div>
+                </div>
+                
+                <div class="recognition-item glass-panel">
+                    <div class="recognition-logo">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>RSA Innovation Sandbox</h3>
+                    <p>Top 10 Most Innovative Security Startup</p>
+                    <div class="recognition-year">2022</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Presence -->
+    <section class="global-presence">
+        <div class="container">
+            <h2 class="section-title">Global Presence</h2>
+            
+            <div class="presence-content">
+                <div class="presence-map glass-panel">
+                    <h3>Worldwide Operations</h3>
+                    <div class="map-info">
+                        <p>With offices and team members across the globe, we provide 24/7 support and localized service to our customers worldwide.</p>
+                    </div>
+                    <div class="office-locations">
+                        <div class="location-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="location-info">
+                                <h4>San Francisco, USA</h4>
+                                <p>Global Headquarters</p>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="location-info">
+                                <h4>London, UK</h4>
+                                <p>European Operations</p>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="location-info">
+                                <h4>Singapore</h4>
+                                <p>Asia-Pacific Hub</p>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="location-info">
+                                <h4>Tel Aviv, Israel</h4>
+                                <p>R&D Center</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="presence-stats">
+                    <div class="stat-item glass-panel">
+                        <div class="stat-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Global Offices</div>
+                    </div>
+                    
+                    <div class="stat-item glass-panel">
+                        <div class="stat-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Countries Served</div>
+                    </div>
+                    
+                    <div class="stat-item glass-panel">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Global Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer glass-panel">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>CredO</h3>
+                    <p>Advanced cybersecurity intelligence for modern threats.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="under-the-hood.html">Under the hood...!</a></li>
+                            <li><a href="enterprise-product.html">Enterprise Product</a></li>
+                            <li><a href="connected-everything.html">Connected Everything</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="who-we-are.html">Who We Are</a></li>
+                            <li><a href="whos-behind-this.html">Who's behind this</a></li>
+                            <li><a href="reach-out.html">Reach out</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CredO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

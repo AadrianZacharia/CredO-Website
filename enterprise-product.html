@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Product - CredO Cybersecurity</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="Assets/favicon.PNG">
+    <link rel="shortcut icon" type="image/png" href="Assets/favicon.PNG">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* EMERGENCY CSS - Force red colors */
+        .hero-title,
+        .section-title,
+        .page-title,
+        .service-title,
+        .layer-title,
+        .module-title,
+        .component-header h3,
+        .threat-title,
+        h1, h2, h3, h4 {
+            color: #780000 !important;
+        }
+        
+        /* Ultra-specific selectors for browser compatibility */
+        h1[class*="hero"], h1[class*="title"], h2[class*="title"], h3[class*="title"] {
+            color: #780000 !important;
+        }
+        
+        /* Force red on specific elements by tag */
+        section h1, section h2, section h3, section h4,
+        div h1, div h2, div h3, div h4 {
+            color: #780000 !important;
+        }
+        
+        .navbar {
+            background: rgba(120, 0, 0, 0.95) !important;
+            border-bottom: 1px solid #780000 !important;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #780000 0%, #a10000 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-sun" id="themeIcon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar glass-panel">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="Assets/logo2.PNG" alt="CredO Logo" class="nav-logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Solutions <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu glass-panel">
+                        <li><a href="under-the-hood.html" class="dropdown-link">Under the hood...!</a></li>
+                        <li><a href="enterprise-product.html" class="dropdown-link active">Enterprise Product</a></li>
+                        <li><a href="connected-everything.html" class="dropdown-link">Connected Everything</a></li>
+                        <li><a href="partners.html" class="dropdown-link">Partners</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Know us <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu glass-panel">
+                        <li><a href="whos-behind-this.html" class="dropdown-link">Who's behind this</a></li>
+                        <li><a href="who-we-are.html" class="dropdown-link">Who We Are</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="reach-out.html" class="nav-link">Reach out</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="page-title">
+                    Enterprise <span class="gradient-text">Product</span>
+                </h1>
+                <p class="page-subtitle">
+                    Comprehensive cybersecurity platform designed for large-scale enterprises with advanced threat protection and compliance management.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Overview -->
+    <section class="product-overview">
+        <div class="container">
+            <div class="overview-content">
+                <div class="overview-text">
+                    <h2 class="section-title">CredO Enterprise Suite</h2>
+                    <p class="overview-description">
+                        A unified cybersecurity platform that scales with your organization, providing comprehensive protection across all digital assets while maintaining compliance with industry standards.
+                    </p>
+                    
+                    <div class="key-features">
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="feature-content">
+                                <h4>Multi-Layer Defense</h4>
+                                <p>Advanced protection across network, endpoint, and cloud environments</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <div class="feature-content">
+                                <h4>Centralized Management</h4>
+                                <p>Single pane of glass for monitoring and managing security across your enterprise</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-certificate"></i>
+                            <div class="feature-content">
+                                <h4>Compliance Ready</h4>
+                                <p>Built-in compliance frameworks for GDPR, HIPAA, SOX, and more</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="overview-visual">
+                    <div class="enterprise-dashboard glass-panel">
+                        <div class="dashboard-header">
+                            <h3>Enterprise Security Dashboard</h3>
+                            <div class="status-badge">
+                                <span class="status-dot secure"></span>
+                                <span>SECURE</span>
+                            </div>
+                        </div>
+                        <div class="dashboard-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">147</div>
+                                <div class="stat-label">Endpoints Protected</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">23</div>
+                                <div class="stat-label">Threats Blocked</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">99.9%</div>
+                                <div class="stat-label">Security Score</div>
+                            </div>
+                        </div>
+                        <div class="security-levels">
+                            <div class="level-bar">
+                                <span class="level-label">Network Security</span>
+                                <div class="level-progress">
+                                    <div class="progress-fill" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div class="level-bar">
+                                <span class="level-label">Endpoint Protection</span>
+                                <div class="level-progress">
+                                    <div class="progress-fill" style="width: 88%;"></div>
+                                </div>
+                            </div>
+                            <div class="level-bar">
+                                <span class="level-label">Cloud Security</span>
+                                <div class="level-progress">
+                                    <div class="progress-fill" style="width: 92%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enterprise Modules -->
+    <section class="enterprise-modules">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Enterprise Modules</h2>
+                <p class="section-subtitle">Modular architecture allows you to deploy only what you need</p>
+            </div>
+            
+            <div class="modules-grid">
+                <div class="module-card glass-panel">
+                    <div class="module-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="module-title">Network Security</h3>
+                    <p class="module-description">Advanced firewall, intrusion detection, and network monitoring with AI-powered threat analysis.</p>
+                    <div class="module-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Next-gen firewall</li>
+                            <li><i class="fas fa-check"></i> DPI & behavioral analysis</li>
+                            <li><i class="fas fa-check"></i> Zero-trust architecture</li>
+                        </ul>
+                    </div>
+                    <div class="module-pricing">
+                        <span class="price">$299/month</span>
+                        <span class="price-unit">per 100 devices</span>
+                    </div>
+                </div>
+                
+                <div class="module-card glass-panel featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="module-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="module-title">Endpoint Protection</h3>
+                    <p class="module-description">Complete endpoint security with advanced malware detection, device control, and vulnerability management.</p>
+                    <div class="module-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Real-time scanning</li>
+                            <li><i class="fas fa-check"></i> Device encryption</li>
+                            <li><i class="fas fa-check"></i> Patch management</li>
+                        </ul>
+                    </div>
+                    <div class="module-pricing">
+                        <span class="price">$199/month</span>
+                        <span class="price-unit">per 100 endpoints</span>
+                    </div>
+                </div>
+                
+                <div class="module-card glass-panel">
+                    <div class="module-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="module-title">Cloud Security</h3>
+                    <p class="module-description">Multi-cloud security management with automated compliance monitoring and threat response.</p>
+                    <div class="module-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Multi-cloud support</li>
+                            <li><i class="fas fa-check"></i> Auto-remediation</li>
+                            <li><i class="fas fa-check"></i> Compliance dashboards</li>
+                        </ul>
+                    </div>
+                    <div class="module-pricing">
+                        <span class="price">$399/month</span>
+                        <span class="price-unit">per cloud account</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deployment Options -->
+    <section class="deployment-options">
+        <div class="container">
+            <h2 class="section-title">Deployment Options</h2>
+            
+            <div class="deployment-grid">
+                <div class="deployment-option glass-panel">
+                    <div class="deployment-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Cloud Deployment</h3>
+                    <p>Fully managed SaaS solution with automatic updates and scaling</p>
+                    <div class="deployment-benefits">
+                        <span class="benefit-tag">Quick Setup</span>
+                        <span class="benefit-tag">Auto-scaling</span>
+                        <span class="benefit-tag">24/7 Support</span>
+                    </div>
+                </div>
+                
+                <div class="deployment-option glass-panel">
+                    <div class="deployment-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>On-Premise</h3>
+                    <p>Complete control with dedicated hardware deployment in your data center</p>
+                    <div class="deployment-benefits">
+                        <span class="benefit-tag">Full Control</span>
+                        <span class="benefit-tag">Custom Config</span>
+                        <span class="benefit-tag">Air-gapped</span>
+                    </div>
+                </div>
+                
+                <div class="deployment-option glass-panel">
+                    <div class="deployment-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>Hybrid</h3>
+                    <p>Best of both worlds with cloud management and on-premise enforcement</p>
+                    <div class="deployment-benefits">
+                        <span class="benefit-tag">Flexible</span>
+                        <span class="benefit-tag">Scalable</span>
+                        <span class="benefit-tag">Secure</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enterprise Stats -->
+    <section class="enterprise-stats">
+        <div class="container">
+            <h2 class="section-title">Trusted by Enterprise Leaders</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card glass-panel">
+                    <div class="stat-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Enterprise Customers</div>
+                </div>
+                
+                <div class="stat-card glass-panel">
+                    <div class="stat-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="stat-number">10M+</div>
+                    <div class="stat-label">Endpoints Protected</div>
+                </div>
+                
+                <div class="stat-card glass-panel">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Customer Satisfaction</div>
+                </div>
+                
+                <div class="stat-card glass-panel">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-number">2.1s</div>
+                    <div class="stat-label">Average Response Time</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="enterprise-cta">
+        <div class="container">
+            <div class="cta-content glass-panel">
+                <h2>Ready to Secure Your Enterprise?</h2>
+                <p>Get a personalized demo and see how CredO Enterprise can protect your organization.</p>
+                <div class="cta-buttons">
+                    <a href="reach-out.html" class="btn btn-primary glass-btn">Schedule Demo</a>
+                    <a href="#" class="btn btn-secondary glass-btn">Download Whitepaper</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer glass-panel">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>CredO</h3>
+                    <p>Advanced cybersecurity intelligence for modern threats.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="under-the-hood.html">Under the hood...!</a></li>
+                            <li><a href="enterprise-product.html">Enterprise Product</a></li>
+                            <li><a href="connected-everything.html">Connected Everything</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="who-we-are.html">Who We Are</a></li>
+                            <li><a href="whos-behind-this.html">Who's behind this</a></li>
+                            <li><a href="reach-out.html">Reach out</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 CredO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
