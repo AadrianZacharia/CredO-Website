@@ -6,7 +6,7 @@ Allow: /
 # Disallow: /private/
 
 # Sitemap location
-Sitemap: https://credo-cybersecurity.netlify.app/sitemap.xml
+Sitemap: https://cred-o.com/sitemap.xml
 
 # Crawl delay (optional)
 Crawl-delay: 1
