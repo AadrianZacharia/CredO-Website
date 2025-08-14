@@ -13,7 +13,43 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-
+    <style>
+        /* EMERGENCY CSS - Force red colors */
+        .hero-title,
+        .section-title,
+        .page-title,
+        .service-title,
+        .layer-title,
+        .module-title,
+        .component-header h3,
+        .threat-title,
+        h1, h2, h3, h4 {
+            color: #780000 !important;
+        }
+        
+        /* Ultra-specific selectors for browser compatibility */
+        h1[class*="hero"], h1[class*="title"], h2[class*="title"], h3[class*="title"] {
+            color: #780000 !important;
+        }
+        
+        /* Force red on specific elements by tag */
+        section h1, section h2, section h3, section h4,
+        div h1, div h2, div h3, div h4 {
+            color: #780000 !important;
+        }
+        
+        .navbar {
+            background: rgba(120, 0, 0, 0.95) !important;
+            border-bottom: 1px solid #780000 !important;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #780000 0%, #a10000 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -523,24 +559,33 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="Assets/logo2.PNG" alt="CredO Logo" class="footer-logo">
-                    <p>Possibilities in AI : Real-Time Security Intelligence</p>
+                    <h3>CredO</h3>
+                    <p>Advanced cybersecurity intelligence for modern threats.</p>
                 </div>
-                <div class="footer-section footer-company">
-                    <h4>Company</h4>
-                    <div class="company-links">
-                        <a href="who-we-are.html">About Us</a>
-                        <span class="separator">•</span>
-                        <a href="#">Careers</a>
-                        <span class="separator">•</span>
-                        <a href="reach-out.html">Contact</a>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Solutions</h4>
+                        <ul>
+                            <li><a href="under-the-hood.html">Under the hood...!</a></li>
+                            <li><a href="enterprise-product.html">Enterprise Product</a></li>
+                            <li><a href="connected-everything.html">Connected Everything</a></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="footer-section footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/credort/" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/cred_o.official/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="who-we-are.html">Who We Are</a></li>
+                            <li><a href="whos-behind-this.html">Who's behind this</a></li>
+                            <li><a href="reach-out.html">Reach out</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
