@@ -145,27 +145,30 @@ body::before {
 
 /* Theme Toggle Button */
 .theme-toggle {
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
-    z-index: 1000;
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
     background: var(--glass-bg);
     backdrop-filter: blur(var(--blur-amount));
     border: 1px solid var(--glass-border);
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--text-primary);
     cursor: pointer;
     transition: all var(--transition-normal);
+    font-size: 0.9rem;
 }
 
 .theme-toggle:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-actions .theme-toggle:hover {
+    transform: scale(1.05) !important;
 }
 
 /* Navigation */
@@ -175,19 +178,37 @@ body::before {
     left: 0;
     right: 0;
     z-index: 999;
-    padding: 1rem 0;
+    padding: 0.75rem 0;
     background: rgba(120, 0, 0, 0.95) !important;
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--brand-color);
 }
 
 .nav-container {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 10;
+}
+
+/* Ensure theme toggle is positioned within navbar */
+.nav-actions .theme-toggle {
+    position: relative !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
 }
 
 .nav-brand h2 {
@@ -201,9 +222,9 @@ body::before {
 }
 
 .nav-logo {
-    height: 35px;
+    height: 32px;
     width: auto;
-    max-width: 125px;
+    max-width: 115px;
     object-fit: contain;
     transition: all var(--transition-normal);
     filter: brightness(1.1);
@@ -217,7 +238,7 @@ body::before {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .nav-link {
@@ -1886,15 +1907,35 @@ section {
     }
     
     .theme-toggle {
-        top: 1rem;
-        right: 1rem;
-        width: 45px;
-        height: 45px;
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
+    }
+
+    .nav-container {
+        max-width: 95%;
+        padding: 0 1rem;
+    }
+
+    .nav-actions {
+        gap: 0.5rem;
+    }
+
+    /* Mobile specific positioning override */
+    .nav-actions .theme-toggle {
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        left: 0 !important;
     }
     
     .nav-logo {
-        height: 28px;
-        max-width: 100px;
+        height: 26px;
+        max-width: 90px;
+    }
+
+    .navbar {
+        padding: 0.5rem 0;
     }
     
     .page-title {
