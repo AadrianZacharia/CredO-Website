@@ -1,0 +1,29 @@
+{
+  "name": "credo-website",
+  "version": "1.0.0",
+  "description": "CredO Cybersecurity Website - AI-Powered Threat Intelligence Platform",
+  "main": "index.html",
+  "scripts": {
+    "start": "node local-server.js",
+    "dev": "node local-server.js",
+    "serve": "node local-server.js",
+    "test": "echo \"Local development server for CredO website\" && exit 0"
+  },
+  "keywords": [
+    "cybersecurity",
+    "website",
+    "credo",
+    "threat-intelligence",
+    "ai-security",
+    "real-time-protection"
+  ],
+  "author": "CredO Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/CredO-Website.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
