@@ -467,7 +467,7 @@ document.addEventListener('DOMContentLoaded', () => {
             font-family: var(--font-secondary);
             font-size: 3rem;
             font-weight: 700;
-            color: #780000;
+            color: #4f000b;
             margin-bottom: 2rem;
             display: flex;
             justify-content: center;
@@ -478,7 +478,7 @@ document.addEventListener('DOMContentLoaded', () => {
             width: 50px;
             height: 50px;
             border: 3px solid rgba(120, 0, 0, 0.3);
-            border-top: 3px solid #780000;
+            border-top: 3px solid #4f000b;
             border-radius: 50%;
             animation: spin 1s linear infinite;
             margin: 0 auto 1rem;
@@ -566,3 +566,438 @@ const utils = {
         );
     }
 };
+
+// O Intelligence Animated Section
+function initializeOIntelligenceFeatures() {
+    const animatedSection = document.querySelector('.o-intelligence-animated');
+    const miniCards = document.querySelectorAll('.feature-card-mini');
+    
+    if (!animatedSection) return;
+    
+    let animationTriggered = false;
+    
+    // Intersection Observer for scroll-triggered animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !animationTriggered) {
+                animationTriggered = true;
+                triggerOIntelligenceAnimation();
+            }
+        });
+    }, {
+        threshold: 0.3, // Trigger when 30% of section is visible
+        rootMargin: '0px 0px -100px 0px'
+    });
+    
+    observer.observe(animatedSection);
+    
+    // Enhanced hover effects for mini feature cards
+    miniCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            // Add ripple effect
+            const ripple = document.createElement('div');
+            ripple.style.position = 'absolute';
+            ripple.style.width = '5px';
+            ripple.style.height = '5px';
+            ripple.style.background = 'rgba(79, 0, 11, 0.4)';
+            ripple.style.borderRadius = '50%';
+            ripple.style.top = '50%';
+            ripple.style.left = '50%';
+            ripple.style.transform = 'translate(-50%, -50%) scale(0)';
+            ripple.style.animation = 'rippleExpand 0.6s ease-out forwards';
+            ripple.style.pointerEvents = 'none';
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                if (ripple.parentNode) {
+                    ripple.remove();
+                }
+            }, 600);
+        });
+        
+        // Click effect
+        card.addEventListener('click', function() {
+            const feature = this.dataset.feature;
+            console.log(`O Intelligence feature clicked: ${feature}`);
+            
+            // Add click animation
+            const currentTransform = this.style.transform;
+            this.style.transform = 'translateY(-4px) scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = currentTransform || '';
+            }, 150);
+        });
+    });
+}
+
+function triggerOIntelligenceAnimation() {
+    console.log('🎬 Triggering O Intelligence animation sequence');
+    
+    // Stage 1: Main statement pops up (0s)
+    setTimeout(() => {
+        const mainStatement = document.querySelector('.main-statement');
+        const stage1 = document.querySelector('.stage-1');
+        if (mainStatement && stage1) {
+            stage1.classList.add('animate');
+            mainStatement.classList.add('animate');
+        }
+    }, 0);
+    
+    // Stage 2: Dot appears first (0.8s)
+    setTimeout(() => {
+        const stage2 = document.querySelector('.stage-2');
+        const centerDot = document.querySelector('.center-dot');
+        
+        if (stage2) stage2.classList.add('animate');
+        if (centerDot) centerDot.classList.add('animate');
+    }, 800);
+    
+    // Stage 2b: Text slides in from left and right (1.2s)
+    setTimeout(() => {
+        const statementLeft = document.querySelector('.statement-left');
+        const statementRight = document.querySelector('.statement-right');
+        
+        if (statementLeft) statementLeft.classList.add('animate');
+        if (statementRight) statementRight.classList.add('animate');
+    }, 1200);
+    
+    // Stage 3: Move text up and show cards (2s)
+    setTimeout(() => {
+        const stage3 = document.querySelector('.stage-3');
+        if (stage3) {
+            stage3.classList.add('animate');
+            
+            // Add crushing effect to text
+            const mainStatement = document.querySelector('.main-statement');
+            const statementLeft = document.querySelector('.statement-left');
+            const statementRight = document.querySelector('.statement-right');
+            const centerDot = document.querySelector('.center-dot');
+            
+            if (mainStatement) {
+                mainStatement.classList.add('crush-text');
+            }
+            if (statementLeft) {
+                statementLeft.classList.add('crush-text');
+            }
+            if (statementRight) {
+                statementRight.classList.add('crush-text');
+            }
+            if (centerDot) {
+                centerDot.classList.add('crush-text');
+            }
+        }
+    }, 2000);
+    
+    // Feature cards pop up with staggered delays (2.2s - 3.0s)
+    const featureCards = document.querySelectorAll('.feature-card-mini');
+    featureCards.forEach((card, index) => {
+        const delay = parseFloat(card.dataset.delay) * 1000;
+        setTimeout(() => {
+            card.classList.add('animate');
+        }, 2200 + delay);
+    });
+    
+    // Context description fades in (3.2s)
+    setTimeout(() => {
+        const contextDescription = document.querySelector('.context-description');
+        if (contextDescription) {
+            contextDescription.classList.add('animate');
+        }
+    }, 3200);
+}
+
+// Add ripple animation CSS
+const rippleStyle = document.createElement('style');
+rippleStyle.textContent = `
+    @keyframes rippleExpand {
+        0% {
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translate(-50%, -50%) scale(40);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(rippleStyle);
+
+// POV Flipping Cards Management
+class POVCardsManager {
+    constructor() {
+        this.cards = document.querySelectorAll('.flip-card');
+        this.indicators = document.querySelectorAll('.indicator');
+        this.currentCard = 0;
+        this.autoFlipInterval = null;
+        this.imageStageTimeout = null;
+        this.autoFlipDelay = 7000; // 7 seconds total (3s content + 3s image + 1s flip)
+        this.isFlipping = false;
+        this.currentPhase = 'content-stage'; // 'content-stage' | 'image-stage' | 'flipping'
+        
+        this.init();
+    }
+    
+    init() {
+        if (!this.cards.length) return;
+        
+        // Add click listeners to indicators
+        this.indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => this.goToCard(index));
+        });
+        
+        // Start auto-flip
+        this.startAutoFlip();
+        
+        // Pause on hover
+        const container = document.querySelector('.flip-cards-container');
+        if (container) {
+            container.addEventListener('mouseenter', () => this.pauseAutoFlip());
+            container.addEventListener('mouseleave', () => this.startAutoFlip());
+        }
+        
+        // Initialize intersection observer for animation
+        this.initIntersectionObserver();
+    }
+    
+    initIntersectionObserver() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.startAutoFlip();
+                } else {
+                    this.pauseAutoFlip();
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+        
+        const section = document.querySelector('.pov-cards-section');
+        if (section) {
+            observer.observe(section);
+        }
+    }
+    
+    goToCard(targetIndex) {
+        if (this.isFlipping || targetIndex === this.currentCard) return;
+        
+        this.isFlipping = true;
+        
+        const currentCardElement = this.cards[this.currentCard];
+        const targetCardElement = this.cards[targetIndex];
+        
+        // Clear any existing timeouts
+        this.pauseAutoFlip();
+        
+        // Determine flip direction
+        const direction = targetIndex > this.currentCard ? 'next' : 'prev';
+        
+        // Keep current card in image-stage during flip to avoid glitch
+        // Do NOT reset to normal state before flipping
+        
+        // Animate current card out
+        this.animateCardOut(currentCardElement, direction);
+        
+        // Store current card index before updating
+        const outgoingCardIndex = this.currentCard;
+        
+        // Animate new card in
+        setTimeout(() => {
+            this.updateActiveCard(targetIndex);
+            this.animateCardIn(targetCardElement, direction);
+        }, 400);
+        
+        setTimeout(() => {
+            // Reset the outgoing card to normal state after flip is complete
+            this.setCardPhase(outgoingCardIndex, 'normal');
+            
+            this.isFlipping = false;
+            // Start new sequence for the new card
+            this.startCardSequence();
+        }, 800);
+    }
+    
+    animateCardOut(card, direction) {
+        card.classList.add('flipping-out');
+        
+        if (direction === 'next') {
+            card.style.transform = 'rotateY(-90deg) translateX(-50%)';
+        } else {
+            card.style.transform = 'rotateY(90deg) translateX(50%)';
+        }
+    }
+    
+    animateCardIn(card, direction) {
+        card.classList.remove('flipping-out');
+        card.classList.add('active', 'flipping-in');
+        
+        if (direction === 'next') {
+            card.style.transform = 'rotateY(0deg) translateX(0%)';
+        } else {
+            card.style.transform = 'rotateY(0deg) translateX(0%)';
+        }
+        
+        setTimeout(() => {
+            card.classList.remove('flipping-in');
+            card.style.transform = '';
+        }, 400);
+    }
+    
+    updateActiveCard(newIndex) {
+        // Update cards
+        this.cards[this.currentCard].classList.remove('active');
+        this.cards[newIndex].classList.add('active');
+        
+        // Update indicators
+        this.indicators[this.currentCard].classList.remove('active');
+        this.indicators[newIndex].classList.add('active');
+        
+        this.currentCard = newIndex;
+    }
+    
+    nextCard() {
+        const nextIndex = (this.currentCard + 1) % this.cards.length;
+        this.goToCard(nextIndex);
+    }
+    
+    startAutoFlip() {
+        this.pauseAutoFlip();
+        this.startCardSequence();
+    }
+    
+    startCardSequence() {
+        // Stage 1: Show full content popping from center
+        this.setCardPhase(this.currentCard, 'content-stage');
+        
+        // Start the sequence timer
+        this.autoFlipInterval = setTimeout(() => {
+            this.executeImageStage();
+        }, 3000); // Show content for 3 seconds
+    }
+    
+    executeImageStage() {
+        if (this.isFlipping) return;
+        
+        // Stage 2: Content disappears, image pops from center
+        this.setCardPhase(this.currentCard, 'image-stage');
+        
+        // After showing image, flip to next card
+        this.imageStageTimeout = setTimeout(() => {
+            this.nextCard();
+        }, 3000); // Show image for 3 seconds
+    }
+    
+    setCardPhase(cardIndex, phase) {
+        const card = this.cards[cardIndex];
+        if (!card) return;
+        
+        // Remove all phase classes
+        card.classList.remove('content-stage', 'image-stage');
+        
+        // Add new phase class
+        if (phase !== 'normal') {
+            card.classList.add(phase);
+        }
+        
+        this.currentPhase = phase;
+    }
+    
+    pauseAutoFlip() {
+        if (this.autoFlipInterval) {
+            clearTimeout(this.autoFlipInterval);
+            this.autoFlipInterval = null;
+        }
+        if (this.imageStageTimeout) {
+            clearTimeout(this.imageStageTimeout);
+            this.imageStageTimeout = null;
+        }
+    }
+}
+
+// Typewriter Animation Class
+class TypewriterAnimation {
+    constructor(element, options = {}) {
+        this.element = element;
+        this.text = element.getAttribute('data-text') || element.textContent;
+        this.speed = options.speed || 50; // milliseconds between each letter
+        this.delay = options.delay || 0; // delay before starting
+        this.currentIndex = 0;
+        this.isComplete = false;
+        
+        // Clear the original text
+        this.element.textContent = '';
+        
+        this.init();
+    }
+    
+    init() {
+        // Create intersection observer to trigger when element comes into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !this.isComplete) {
+                    setTimeout(() => {
+                        this.startTyping();
+                    }, this.delay);
+                    observer.unobserve(this.element);
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+        
+        observer.observe(this.element);
+    }
+    
+    startTyping() {
+        this.typeNextLetter();
+    }
+    
+    typeNextLetter() {
+        if (this.currentIndex < this.text.length) {
+            const char = this.text[this.currentIndex];
+            const span = document.createElement('span');
+            span.className = 'letter';
+            
+            if (char === ' ') {
+                span.className += ' space';
+                span.innerHTML = '&nbsp;';
+            } else {
+                span.textContent = char;
+            }
+            
+            // Set animation delay
+            span.style.animationDelay = '0ms';
+            
+            this.element.appendChild(span);
+            this.currentIndex++;
+            
+            setTimeout(() => {
+                this.typeNextLetter();
+            }, this.speed);
+        } else {
+            // Typing complete
+            this.isComplete = true;
+            setTimeout(() => {
+                this.element.classList.add('typing-complete');
+            }, 1000); // Keep cursor for 1 second after completion
+        }
+    }
+}
+
+// Initialize O Intelligence features when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeOIntelligenceFeatures();
+    
+    // Initialize POV Cards Manager
+    new POVCardsManager();
+    
+    // Initialize typewriter animations
+    const typewriterElements = document.querySelectorAll('.typewriter-text');
+    typewriterElements.forEach(element => {
+        new TypewriterAnimation(element, {
+            speed: 30, // Faster typing for long text
+            delay: 500 // Small delay before starting
+        });
+    });
+});

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold & Black Animation Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000;
+            overflow-x: hidden;
+            color: white;
+        }
+
+        .animation-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(ellipse at center, #1a1a1a 0%, #000000 100%);
+            overflow: hidden;
+        }
+
+        /* Floating Gold Particles */
+        .particle {
+            position: absolute;
+            background: linear-gradient(45deg, #ffd700, #ffed4e, #ffc107);
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .particle.small {
+            width: 4px;
+            height: 4px;
+            animation-duration: 12s;
+        }
+
+        .particle.medium {
+            width: 8px;
+            height: 8px;
+            animation-duration: 18s;
+        }
+
+        .particle.large {
+            width: 12px;
+            height: 12px;
+            animation-duration: 25s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) translateX(0px) rotate(0deg);
+                opacity: 0.7;
+            }
+            25% {
+                transform: translateY(-50px) translateX(25px) rotate(90deg);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-100px) translateX(-25px) rotate(180deg);
+                opacity: 0.8;
+            }
+            75% {
+                transform: translateY(-75px) translateX(50px) rotate(270deg);
+                opacity: 0.6;
+            }
+        }
+
+        /* Flowing Gold Lines */
+        .gold-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ffd700, #ffed4e, #ffd700, transparent);
+            opacity: 0.6;
+            animation: flow 8s infinite linear;
+        }
+
+        @keyframes flow {
+            0% {
+                left: -200px;
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                left: 100vw;
+                opacity: 0;
+            }
+        }
+
+        /* Pulsing Gold Orbs */
+        .gold-orb {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ffd700 0%, #ffed4e 30%, transparent 70%);
+            animation: pulse 6s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.8;
+            }
+        }
+
+        /* Geometric Patterns */
+        .geometric-pattern {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 2px solid #ffd700;
+            opacity: 0.4;
+            animation: rotate 20s infinite linear;
+        }
+
+        .geometric-pattern.triangle {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 87px solid #ffd700;
+            border-top: none;
+            opacity: 0.3;
+        }
+
+        .geometric-pattern.diamond {
+            transform: rotate(45deg);
+            animation: spin 15s infinite linear;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(45deg); }
+            100% { transform: rotate(405deg); }
+        }
+
+        /* Content Overlay */
+        .content-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 100;
+        }
+
+        .demo-title {
+            font-size: 3rem;
+            color: #ffd700;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .demo-subtitle {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+        }
+
+        /* Control Panel */
+        .control-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #ffd700;
+            z-index: 200;
+        }
+
+        .control-group {
+            margin-bottom: 15px;
+        }
+
+        .control-group label {
+            display: block;
+            color: #ffd700;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .control-group input[type="range"] {
+            width: 100%;
+            margin-bottom: 5px;
+        }
+
+        .control-group input[type="color"] {
+            width: 50px;
+            height: 30px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .control-value {
+            color: white;
+            font-size: 0.8rem;
+        }
+
+        .toggle-controls {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 215, 0, 0.9);
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 200;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="animation-container" id="animationContainer">
+        <!-- Content Overlay -->
+        <div class="content-overlay">
+            <h1 class="demo-title">Gold & Black Animation</h1>
+            <p class="demo-subtitle">Fine-tune the animation parameters using the controls</p>
+        </div>
+    </div>
+
+    <!-- Toggle Controls Button -->
+    <div class="toggle-controls" onclick="toggleControls()">Toggle Controls</div>
+
+    <!-- Control Panel -->
+    <div class="control-panel hidden" id="controlPanel">
+        <div class="control-group">
+            <label for="particleCount">Particle Count:</label>
+            <input type="range" id="particleCount" min="20" max="200" value="100">
+            <span class="control-value" id="particleCountValue">100</span>
+        </div>
+
+        <div class="control-group">
+            <label for="particleSpeed">Particle Speed:</label>
+            <input type="range" id="particleSpeed" min="5" max="30" value="15">
+            <span class="control-value" id="particleSpeedValue">15s</span>
+        </div>
+
+        <div class="control-group">
+            <label for="lineCount">Gold Lines:</label>
+            <input type="range" id="lineCount" min="3" max="20" value="8">
+            <span class="control-value" id="lineCountValue">8</span>
+        </div>
+
+        <div class="control-group">
+            <label for="orbCount">Gold Orbs:</label>
+            <input type="range" id="orbCount" min="2" max="15" value="6">
+            <span class="control-value" id="orbCountValue">6</span>
+        </div>
+
+        <div class="control-group">
+            <label for="goldColor">Gold Color:</label>
+            <input type="color" id="goldColor" value="#ffd700">
+        </div>
+
+        <div class="control-group">
+            <label for="geometricCount">Geometric Shapes:</label>
+            <input type="range" id="geometricCount" min="2" max="10" value="5">
+            <span class="control-value" id="geometricCountValue">5</span>
+        </div>
+
+        <div class="control-group">
+            <label for="animationIntensity">Animation Intensity:</label>
+            <input type="range" id="animationIntensity" min="0.3" max="1" step="0.1" value="0.7">
+            <span class="control-value" id="animationIntensityValue">0.7</span>
+        </div>
+    </div>
+
+    <script>
+        let animationContainer = document.getElementById('animationContainer');
+        let controlPanel = document.getElementById('controlPanel');
+
+        // Control elements
+        let particleCountSlider = document.getElementById('particleCount');
+        let particleSpeedSlider = document.getElementById('particleSpeed');
+        let lineCountSlider = document.getElementById('lineCount');
+        let orbCountSlider = document.getElementById('orbCount');
+        let goldColorPicker = document.getElementById('goldColor');
+        let geometricCountSlider = document.getElementById('geometricCount');
+        let animationIntensitySlider = document.getElementById('animationIntensity');
+
+        // Value display elements
+        let particleCountValue = document.getElementById('particleCountValue');
+        let particleSpeedValue = document.getElementById('particleSpeedValue');
+        let lineCountValue = document.getElementById('lineCountValue');
+        let orbCountValue = document.getElementById('orbCountValue');
+        let geometricCountValue = document.getElementById('geometricCountValue');
+        let animationIntensityValue = document.getElementById('animationIntensityValue');
+
+        function toggleControls() {
+            controlPanel.classList.toggle('hidden');
+        }
+
+        function createParticle() {
+            let particle = document.createElement('div');
+            particle.className = 'particle ' + ['small', 'medium', 'large'][Math.floor(Math.random() * 3)];
+            
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.top = Math.random() * 100 + 'vh';
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            particle.style.animationDuration = (parseInt(particleSpeedSlider.value) + Math.random() * 10) + 's';
+            
+            return particle;
+        }
+
+        function createGoldLine() {
+            let line = document.createElement('div');
+            line.className = 'gold-line';
+            
+            line.style.top = Math.random() * 100 + 'vh';
+            line.style.width = (100 + Math.random() * 200) + 'px';
+            line.style.animationDelay = Math.random() * 8 + 's';
+            
+            return line;
+        }
+
+        function createGoldOrb() {
+            let orb = document.createElement('div');
+            orb.className = 'gold-orb';
+            
+            let size = 50 + Math.random() * 100;
+            orb.style.width = size + 'px';
+            orb.style.height = size + 'px';
+            orb.style.left = Math.random() * 100 + 'vw';
+            orb.style.top = Math.random() * 100 + 'vh';
+            orb.style.animationDelay = Math.random() * 6 + 's';
+            
+            return orb;
+        }
+
+        function createGeometricPattern() {
+            let pattern = document.createElement('div');
+            let shapes = ['geometric-pattern', 'geometric-pattern diamond', 'geometric-pattern triangle'];
+            pattern.className = shapes[Math.floor(Math.random() * shapes.length)];
+            
+            pattern.style.left = Math.random() * 100 + 'vw';
+            pattern.style.top = Math.random() * 100 + 'vh';
+            pattern.style.animationDelay = Math.random() * 10 + 's';
+            
+            return pattern;
+        }
+
+        function updateAnimation() {
+            // Clear existing elements
+            let existingElements = animationContainer.querySelectorAll('.particle, .gold-line, .gold-orb, .geometric-pattern');
+            existingElements.forEach(el => el.remove());
+
+            // Update values display
+            particleCountValue.textContent = particleCountSlider.value;
+            particleSpeedValue.textContent = particleSpeedSlider.value + 's';
+            lineCountValue.textContent = lineCountSlider.value;
+            orbCountValue.textContent = orbCountSlider.value;
+            geometricCountValue.textContent = geometricCountSlider.value;
+            animationIntensityValue.textContent = animationIntensitySlider.value;
+
+            // Create particles
+            for (let i = 0; i < parseInt(particleCountSlider.value); i++) {
+                animationContainer.appendChild(createParticle());
+            }
+
+            // Create gold lines
+            for (let i = 0; i < parseInt(lineCountSlider.value); i++) {
+                animationContainer.appendChild(createGoldLine());
+            }
+
+            // Create gold orbs
+            for (let i = 0; i < parseInt(orbCountSlider.value); i++) {
+                animationContainer.appendChild(createGoldOrb());
+            }
+
+            // Create geometric patterns
+            for (let i = 0; i < parseInt(geometricCountSlider.value); i++) {
+                animationContainer.appendChild(createGeometricPattern());
+            }
+
+            // Update color
+            let goldColor = goldColorPicker.value;
+            document.documentElement.style.setProperty('--gold-color', goldColor);
+
+            // Update animation intensity
+            let intensity = parseFloat(animationIntensitySlider.value);
+            document.documentElement.style.setProperty('--animation-intensity', intensity);
+        }
+
+        // Event listeners for controls
+        particleCountSlider.addEventListener('input', updateAnimation);
+        particleSpeedSlider.addEventListener('input', updateAnimation);
+        lineCountSlider.addEventListener('input', updateAnimation);
+        orbCountSlider.addEventListener('input', updateAnimation);
+        goldColorPicker.addEventListener('input', updateAnimation);
+        geometricCountSlider.addEventListener('input', updateAnimation);
+        animationIntensitySlider.addEventListener('input', updateAnimation);
+
+        // Initialize animation
+        updateAnimation();
+
+        // Regenerate elements periodically for dynamic effect
+        setInterval(() => {
+            if (Math.random() < 0.3) {
+                let newParticle = createParticle();
+                animationContainer.appendChild(newParticle);
+                
+                // Remove old particles to prevent memory issues
+                setTimeout(() => {
+                    if (newParticle.parentNode) {
+                        newParticle.remove();
+                    }
+                }, parseInt(particleSpeedSlider.value) * 1000);
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

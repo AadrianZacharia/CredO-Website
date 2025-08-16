@@ -197,7 +197,7 @@ const server = http.createServer(async (req, res) => {
                     <title>404 - Page Not Found</title>
                     <style>
                         body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-                        h1 { color: #780000; }
+                        h1 { color: #4f000b; }
                     </style>
                 </head>
                 <body>
